@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/convexHull.dir/src/ConvexHull.cpp.o CMakeFiles/convexHull.dir/src/Point.cpp.o CMakeFiles/convexHull.dir/main.cpp.o  -o convexHull 
