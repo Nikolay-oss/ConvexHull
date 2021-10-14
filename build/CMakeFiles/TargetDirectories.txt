@@ -1,0 +1,3 @@
+/home/dkenchur/projects/univer/sintez/ConvexSet/build/CMakeFiles/rebuild_cache.dir
+/home/dkenchur/projects/univer/sintez/ConvexSet/build/CMakeFiles/edit_cache.dir
+/home/dkenchur/projects/univer/sintez/ConvexSet/build/CMakeFiles/convexHull.dir

@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../inc/ConvexHull.hpp
+vector
+-
+algorithm
+-
+Point.hpp
+../inc/Point.hpp
+tuple
+-
+
+../inc/Point.hpp
+
+/home/dkenchur/projects/univer/sintez/ConvexSet/main.cpp
+ConvexHull.hpp
+/home/dkenchur/projects/univer/sintez/ConvexSet/ConvexHull.hpp
+iostream
+-
+fstream
+-
+string
+-
+
+/home/dkenchur/projects/univer/sintez/ConvexSet/src/ConvexHull.cpp
+ConvexHull.hpp
+/home/dkenchur/projects/univer/sintez/ConvexSet/src/ConvexHull.hpp
+
+/home/dkenchur/projects/univer/sintez/ConvexSet/src/Point.cpp
+Point.hpp
+/home/dkenchur/projects/univer/sintez/ConvexSet/src/Point.hpp
+
