@@ -1,4 +1,5 @@
 #include "ConvexHull.hpp"
+#include <exception>
 
 static bool upperSpaceHandler(const double value)
 {
@@ -14,6 +15,8 @@ ConvexHull::ConvexHull(const std::vector<pt::Point>& points) :
 	sortedSetOfPointsX(points),
 	sortedSetOfPointsY(points)
 {
+	if (points.size() < 2)
+		throw NotEnoughPointsException();
 	sortPointsXY();
 }
 
@@ -39,7 +42,7 @@ void ConvexHull::sortPointsXY()
 	std::sort(sortedSetOfPointsY.begin(), sortedSetOfPointsY.end(), pt::compareY);
 }
 
-double ConvexHull::hyperPlane(double w1, double w2, double x, double y, double b)
+double ConvexHull::hyperPlane(double w1, double w2, double x, double y, double b) const
 {
 	return w1 * x + w2 * y + b;
 }

@@ -9,6 +9,15 @@
 class ConvexHull
 {
 	public:
+		class NotEnoughPointsException : public std::exception
+		{
+			public:
+				const char* what() const noexcept override
+				{
+					return "Not enough points";
+				}
+		};
+
 		template <class It>
 		ConvexHull(It begin, It end);
 		ConvexHull(const std::vector<pt::Point>& points);
@@ -24,7 +33,7 @@ class ConvexHull
 		std::vector<pt::Point> sortedSetOfPointsY;
 
 		void sortPointsXY();
-		double hyperPlane(double w1, double w2, double x, double y, double b);
+		double hyperPlane(double w1, double w2, double x, double y, double b) const;
 		std::tuple<double, double> normalVector(const pt::Point& p1, const pt::Point& p2) const;
 
 		template <class It>
@@ -35,6 +44,8 @@ template <class It>
 ConvexHull::ConvexHull(It begin, It end)
 {
 	std::copy(begin, end, std::back_inserter(sortedSetOfPointsX));
+	if (sortedSetOfPointsX.size() < 2)
+		throw NotEnoughPointsException();
 	std::copy(begin, end, std::back_inserter(sortedSetOfPointsY));
 	sortPointsXY();
 }
